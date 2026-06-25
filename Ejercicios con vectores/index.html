@@ -1,1 +1,303 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tarea 2 - Manipulación de Vectores</title>
+</head>
+<body>
+    <h3>Ejercicios de vectores</h3>
+    <div>
+        <table>
+            <tbody>
+                <tr>
+                    <td>Dimensionalidad del arreglo:</td>
+                    <td>
+                        <select id="dimension-arreglo">
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                            <option value="6">6</option>
+                            <option value="7">7</option>
+                            <option value="8">8</option>
+                            <option value="9">9</option>
+                            <option value="10">10</option>
+                            <option value="15">15</option>
+                            <option value="20">20</option>
+                            <option value="25">25</option>
+                            <option value="30">30</option>
+                        </select>
+                    </td>
+                </tr>
 
+                <tr>
+                    <td>Ingreso de valor a buscar:</td>
+                    <td>
+                        <input type="text" id="valor-busqueda" maxlength="4" size="5">
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>Tipo de orden:</td>
+                    <td>
+                        <select id="tipo-orden">
+                            <option value="asc">Ascendente</option>
+                            <option value="desc">Descendente</option>
+                        </select>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>Número de rotaciones:</td>
+                    <td>
+                        <input type="number" id="num-rotaciones" min="1">
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>Dirección:</td>
+                    <td>
+                        <input type="radio" name="direccion" value="izquierda" checked>
+                        <label>Izquierda</label>
+
+                        <input type="radio" name="direccion" value="derecha">
+                        <label>Derecha</label>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>Primera posición:</td>
+                    <td>
+                        <input type="number" id="posicion1" min="0">
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>Segunda posición:</td>
+                    <td>
+                        <input type="number" id="posicion2" min="0">
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <br>
+
+    <table id="tabla-vector-numerico" border="1" cellspacing="1" cellpadding="1">
+
+        <thead>
+            <tr>
+                <th colspan="10">Vector numérico de N elementos</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            <tr>
+                <td>0</td>
+                <td>1</td>
+                <td>2</td>
+                <td>3</td>
+                <td>4</td>
+                <td>5</td>
+                <td>6</td>
+                <td>7</td>
+                <td>8</td>
+                <td>9</td>
+            </tr>
+
+            <tr>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+            </tr>
+        </tbody>
+
+        <tfoot>
+            <tr>
+                <td colspan="5">
+                    <button id="btn-cargar-vector">
+                        Cargar Vector
+                    </button>
+                </td>
+
+                <td colspan="5">
+                    <button id="btn-vaciar-vector">
+                        Vaciar Vector
+                    </button>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="5">
+                    <button id="btn-presentar-vector">
+                        Presentar Vector
+                    </button>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="5">
+                    <button id="btn-numero-mayor">
+                        Número Mayor
+                    </button>
+                </td>
+
+                <td colspan="5">
+                    <button id="btn-numero-menor">
+                        Número Menor
+                    </button>
+                </td>
+            </tr>
+
+            <tr>
+                <td colspan="5">
+                    <button id="btn-suma">
+                        Suma
+                    </button>
+                </td>
+
+                <td colspan="5">
+                    <button id="btn-producto">
+                        Producto
+                    </button>
+                </td>
+            </tr>
+
+            <tr>
+                <td colspan="5">
+                    <button id="btn-moda">
+                        Moda
+                    </button>
+                </td>
+
+                <td colspan="3">
+                    <button id="btn-media">
+                        Media
+                    </button>
+                </td>
+
+                <td colspan="2">
+                    <button id="btn-mediana">
+                        Mediana
+                    </button>
+                </td>
+            </tr>
+
+
+
+            <tr>
+                <td colspan="5">
+                    <button id="btn-seleccion">
+                        Ordenar Selección
+                    </button>
+                </td>
+
+                <td colspan="5">
+                    <button id="btn-burbuja">
+                        Ordenar Burbuja
+                    </button>
+                </td>
+            </tr>
+
+            <tr>
+                <td colspan="5">
+                    <button id="btn-insercion">
+                        Ordenar Inserción
+                    </button>
+                </td>
+
+                <td colspan="5">
+                    <button id="btn-fusion">
+                        Ordenar Fusión
+                    </button>
+                </td>
+            </tr>
+
+            <!-- BUSQUEDA -->
+
+            <tr>
+                <td colspan="5">
+                    <button id="btn-busqueda-secuencial">
+                        Búsqueda Secuencial
+                    </button>
+                </td>
+
+                <td colspan="5">
+                    <button id="btn-busqueda-binaria">
+                        Búsqueda Binaria
+                    </button>
+                </td>
+            </tr>
+
+            <!-- TRANSFORMACIONES BASICAS -->
+
+            <tr>
+                <td colspan="5">
+                    <button id="btn-invertir">
+                        Invertir Vector
+                    </button>
+                </td>
+
+                <td colspan="5">
+                    <button id="btn-eliminar-duplicados">
+                        Eliminar Duplicados
+                    </button>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td colspan="5">
+                    <button id="btn-rotar">
+                        Rotar Vector
+                    </button>
+                </td>
+
+                <td colspan="5">
+                    <button id="btn-intercambiar">
+                        Intercambiar Elementos
+                    </button>
+                </td>
+            </tr>
+
+        </tfoot>
+
+    </table>
+
+    <hr>
+
+    <table>
+
+        <thead>
+            <tr>
+                <th colspan="2">
+                    Cálculos con vectores
+                </th>
+            </tr>
+        </thead>
+
+        <tbody>
+
+            <tr>
+                <td>Resultado:</td>
+
+                <td>
+                    <input
+                        type="text"
+                        id="txt-respuesta"
+                        size="70"
+                    >
+                </td>
+            </tr>
+
+        </tbody>
+
+    </table>
+    <script src="ejercicios.js"></script>
+</body>
+</html>
